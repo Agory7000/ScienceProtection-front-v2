@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lVQ-G4-9Eo">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--StartingScene-->
+        <scene sceneID="ESF-KT-ZtW">
+            <objects>
+                <viewController title="StartingScene" id="GVl-BK-j1T" customClass="StartingScene" customModule="IOSTakePhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gOR-VJ-P14">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-Lo-HpX">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKy-4n-IOD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your media type." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHa-Qi-gC1">
+                                                <rect key="frame" x="38" y="61" width="299.5" height="33.5"/>
+                                                <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ZHa-Qi-gC1" firstAttribute="centerY" secondItem="fKy-4n-IOD" secondAttribute="centerY" id="4Kt-Dj-f1D"/>
+                                            <constraint firstItem="ZHa-Qi-gC1" firstAttribute="centerX" secondItem="fKy-4n-IOD" secondAttribute="centerX" id="dmn-rD-NMG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N15-9e-beV">
+                                        <rect key="frame" x="0.0" y="156" width="375" height="155.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGd-Kl-VN5">
+                                                <rect key="frame" x="153" y="55" width="69" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="Photo"/>
+                                                <connections>
+                                                    <action selector="photoTapped:" destination="GVl-BK-j1T" eventType="touchUpInside" id="R3b-Ys-vN6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="pGd-Kl-VN5" firstAttribute="centerY" secondItem="N15-9e-beV" secondAttribute="centerY" id="LX4-U3-HkV"/>
+                                            <constraint firstItem="pGd-Kl-VN5" firstAttribute="centerX" secondItem="N15-9e-beV" secondAttribute="centerX" id="b4a-qs-gy1"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-DX-FJ0">
+                                        <rect key="frame" x="0.0" y="311.5" width="375" height="156"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdt-Mg-pcT">
+                                                <rect key="frame" x="153.5" y="55.5" width="68" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="Video"/>
+                                                <connections>
+                                                    <action selector="videoTapped:" destination="GVl-BK-j1T" eventType="touchUpInside" id="bM4-9q-TGc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Wdt-Mg-pcT" firstAttribute="centerX" secondItem="2gb-DX-FJ0" secondAttribute="centerX" id="bzL-TX-SSa"/>
+                                            <constraint firstItem="Wdt-Mg-pcT" firstAttribute="centerY" secondItem="2gb-DX-FJ0" secondAttribute="centerY" id="ldB-Q4-eCi"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjF-BS-tke">
+                                        <rect key="frame" x="0.0" y="467.5" width="375" height="155.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZp-MW-aRi">
+                                                <rect key="frame" x="153.5" y="55" width="68" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="Audio"/>
+                                                <connections>
+                                                    <action selector="audioTapped:" destination="GVl-BK-j1T" eventType="touchUpInside" id="zTI-mY-RrH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="fZp-MW-aRi" firstAttribute="centerX" secondItem="wjF-BS-tke" secondAttribute="centerX" id="eTN-oZ-465"/>
+                                            <constraint firstItem="fZp-MW-aRi" firstAttribute="centerY" secondItem="wjF-BS-tke" secondAttribute="centerY" id="koH-Os-Zhd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="h6b-wQ-bJh" firstAttribute="bottom" secondItem="6Zi-Lo-HpX" secondAttribute="bottom" id="DfZ-s4-nUi"/>
+                            <constraint firstItem="6Zi-Lo-HpX" firstAttribute="leading" secondItem="h6b-wQ-bJh" secondAttribute="leading" id="GEo-5v-3Tz"/>
+                            <constraint firstItem="6Zi-Lo-HpX" firstAttribute="top" secondItem="h6b-wQ-bJh" secondAttribute="top" id="jse-6x-j7Y"/>
+                            <constraint firstItem="h6b-wQ-bJh" firstAttribute="trailing" secondItem="6Zi-Lo-HpX" secondAttribute="trailing" id="tWL-8O-mdY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h6b-wQ-bJh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ixY-Q4-Din"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toPhotoView" id="eq9-5r-Xth"/>
+                        <segue destination="zV9-zi-Wq8" kind="show" identifier="toVideoView" id="7ZT-eJ-5iA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqD-GA-FRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="885"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IOSTakePhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9vC-FC-cR4">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mh-m5-vFq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="275" placeholderIntrinsicHeight="522" translatesAutoresizingMaskIntoConstraints="NO" id="Yqr-uR-PKa">
+                                                <rect key="frame" x="0.0" y="9.5" width="375" height="500"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Yqr-uR-PKa" secondAttribute="height" multiplier="3:4" id="t1u-Sz-O6c"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Yqr-uR-PKa" firstAttribute="centerY" secondItem="0Mh-m5-vFq" secondAttribute="centerY" id="2dg-Ex-57M"/>
+                                            <constraint firstItem="Yqr-uR-PKa" firstAttribute="centerX" secondItem="0Mh-m5-vFq" secondAttribute="centerX" id="BKr-eb-WXa"/>
+                                            <constraint firstItem="Yqr-uR-PKa" firstAttribute="width" secondItem="0Mh-m5-vFq" secondAttribute="width" id="o75-sa-uGx"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8M-60-tKT">
+                                        <rect key="frame" x="0.0" y="519" width="375" height="104"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKT-Rf-adx" userLabel="TakePhotoView">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="104"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rR-AL-XCO">
+                                                        <rect key="frame" x="26.5" y="29.5" width="135" height="45"/>
+                                                        <color key="backgroundColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                                        <state key="normal" title="Take Photo"/>
+                                                        <connections>
+                                                            <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kf4-yp-9IT"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="2rR-AL-XCO" firstAttribute="centerX" secondItem="lKT-Rf-adx" secondAttribute="centerX" id="BWC-cm-K3R"/>
+                                                    <constraint firstItem="2rR-AL-XCO" firstAttribute="centerY" secondItem="lKT-Rf-adx" secondAttribute="centerY" id="mn0-Op-eYm"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n82-AZ-AkH" userLabel="SaveView">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="104"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-5q-dGs">
+                                                        <rect key="frame" x="63.5" y="29.5" width="61" height="45"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                                        <state key="normal" title="Save"/>
+                                                        <connections>
+                                                            <action selector="saveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DRb-MA-exL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="Wej-5q-dGs" firstAttribute="centerX" secondItem="n82-AZ-AkH" secondAttribute="centerX" id="EGh-eC-HEB"/>
+                                                    <constraint firstItem="Wej-5q-dGs" firstAttribute="centerY" secondItem="n82-AZ-AkH" secondAttribute="centerY" id="mHm-tY-SUf"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lKT-Rf-adx" firstAttribute="width" secondItem="n82-AZ-AkH" secondAttribute="width" multiplier="1:1" id="2w0-SN-vyB"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Mh-m5-vFq" firstAttribute="height" secondItem="q8M-60-tKT" secondAttribute="height" multiplier="5:1" id="Gy5-yP-HVg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9vC-FC-cR4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7xO-eo-YRC"/>
+                            <constraint firstItem="9vC-FC-cR4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RzH-Hw-QKj"/>
+                            <constraint firstItem="9vC-FC-cR4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gzO-f2-NY0"/>
+                            <constraint firstItem="9vC-FC-cR4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zMV-O9-Jgz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo" id="QL3-QX-1Wc"/>
+                    <connections>
+                        <outlet property="imageView" destination="Yqr-uR-PKa" id="RLo-CL-Y7m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="885"/>
+        </scene>
+        <!--Video-->
+        <scene sceneID="V1k-MC-e9x">
+            <objects>
+                <viewController title="Video" id="zV9-zi-Wq8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sdp-Ho-kCL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.64772227110000002" green="0.81387544010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="tEN-kX-s8q"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video" id="jlE-qg-cOQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iPj-Da-qbP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="1652"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wiy-Ea-VXq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lVQ-G4-9Eo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jw1-UQ-OjC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GVl-BK-j1T" kind="relationship" relationship="rootViewController" id="W7o-ux-BRP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02i-En-DTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="885.60719640179911"/>
+        </scene>
+    </scenes>
+</document>
