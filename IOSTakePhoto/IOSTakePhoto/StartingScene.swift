@@ -9,6 +9,9 @@
 import UIKit
 
 class StartingScene: UIViewController, UINavigationControllerDelegate {
+    
+    var userName : String?
+    
     @IBAction func photoTapped(_ sender: Any) {
         performSegue(withIdentifier: "toPhotoView", sender: self)
     }
@@ -17,11 +20,20 @@ class StartingScene: UIViewController, UINavigationControllerDelegate {
         performSegue(withIdentifier: "toVideoView", sender: self)
     }
     
-    @IBAction func audioTapped(_ sender: Any) {
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPhotoView" {
+            guard let destination = segue.destination as? TakePhoto else {return}
+            destination.userName = userName
+        } else if segue.identifier == "toVideoView" {
+            //
+            // переход на экран с видео
+            //
+        } else {
+            return
+        }
     }
 }
