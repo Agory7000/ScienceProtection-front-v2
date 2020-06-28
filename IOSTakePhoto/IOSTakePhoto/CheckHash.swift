@@ -28,9 +28,8 @@ class CheckHash : UIViewController, UINavigationControllerDelegate {
             guard let destination = segue.destination as? TakePhoto_2 else {return}
             destination.userName = userName
         } else if segue.identifier == "toVideo_2" {
-            //
-            // переход на экран с видео
-            //
+            guard let destination = segue.destination as? MakeVideo_2 else {return}
+            destination.userName = userName
         } else {
             return
         }

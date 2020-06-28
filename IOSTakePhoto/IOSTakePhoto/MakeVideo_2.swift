@@ -1,45 +1,83 @@
 //
-//  TakePhoto_2.swift
+//  MakeVideo_2.swift
 //  IOSTakePhoto
 //
-//  Created by Дмитрий Симеониди on 25.06.2020.
+//  Created by Дмитрий Симеониди on 27.06.2020.
 //  Copyright © 2020 Moonlight. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CryptoKit
+import MobileCoreServices
 
-class TakePhoto_2 : UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class MakeVideo_2 : UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
     var userName : String?
+    //var videoURL : URL?
+    //var videoPath : String?
+    var videoData : Data?
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var indicator: UIImageView!
     
-    @IBAction func uploadPhotoTapped(_ sender: Any) {
+    @IBAction func uploadTapped(_ sender: Any) {
         self.openGallery()
     }
     
     func openGallery() {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.mediaTypes = [kUTTypeMovie as String]
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }
-    
+
     var imagePicker: UIImagePickerController!
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        if mediaType.isEqual(to: kUTTypeMovie as String) {
+            let url = (info[UIImagePickerController.InfoKey.mediaURL] as! URL)
+            print(url)
+            do {
+                videoData = try Data(contentsOf: url as URL)
+                print(videoData!)
+            } catch {
+                print(error.localizedDescription)
+                return
+            }
+            //self.videoURL = (info[UIImagePickerController.InfoKey.mediaURL] as! URL)
+            //self.videoPath = self.videoURL!.relativePath
+            indicator.image = #imageLiteral(resourceName: "Green")
+        } else {
+            let ac = UIAlertController(title: "Error", message: "Wrong media type.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+            return
+        }
         imagePicker.dismiss(animated: true, completion: nil)
-        imageView.image = info[.originalImage] as? UIImage
     }
     
     @IBAction func checkTapped(_ sender: Any) {
-        if imageView.image == nil {
-            let alert_1 = UIAlertController(title: "Error", message: "Select photo first", preferredStyle: .alert)
+        if videoData == nil {
+            let alert_1 = UIAlertController(title: "Error", message: "Select video first", preferredStyle: .alert)
             alert_1.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert_1, animated: true, completion: nil)
-        } else if imageView.image!.pngData() != nil {
-            let digest = SHA512.hash(data: imageView.image!.pngData()!)
+        } else  {
+            /*var hasher = SHA512()
+            let stream = InputStream(fileAtPath: videoPath!)!
+            stream.open()
+            let bufferSize = 512
+            let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: bufferSize)
+            while stream.hasBytesAvailable {
+                let read = stream.read(buffer, maxLength: bufferSize)
+                let bufferPointer = UnsafeRawBufferPointer(start: buffer, count: read)
+                hasher.update(bufferPointer: bufferPointer)
+            }
+            let digest = hasher.finalize()
+            */
+            let digest = SHA512.hash(data: videoData!)
             let stringHash = digest.map{String(format: "%02hhx", $0)}.joined()
             let digest_2 = SHA512.hash(data: Data((stringHash + userName!).utf8))
             let stringHash_2 = digest_2.map{String(format: "%02hhx", $0)}.joined()
@@ -99,11 +137,11 @@ class TakePhoto_2 : UIViewController, UINavigationControllerDelegate, UIImagePic
                 }
             }
             task.resume()
-        } else {
-            let alert_1 = UIAlertController(title: "Error", message: "Image is not presentable in PNG format", preferredStyle: .alert)
+        } /*else {
+            let alert_1 = UIAlertController(title: "Error", message: "Incorrect path to video file.", preferredStyle: .alert)
             alert_1.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert_1, animated: true, completion: nil)
-        }
+        }*/
     }
     
     func hashFound(datastr : String) {
@@ -164,5 +202,10 @@ class TakePhoto_2 : UIViewController, UINavigationControllerDelegate, UIImagePic
         let alert_1 = UIAlertController(title: "Error", message: "Invalid data revieved", preferredStyle: .alert)
         alert_1.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert_1, animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        indicator.image = #imageLiteral(resourceName: "Red")
     }
 }

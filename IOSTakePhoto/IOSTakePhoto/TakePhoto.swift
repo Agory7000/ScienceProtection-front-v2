@@ -36,7 +36,7 @@ class TakePhoto: UIViewController, UINavigationControllerDelegate, UIImagePicker
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -44,7 +44,7 @@ class TakePhoto: UIViewController, UINavigationControllerDelegate, UIImagePicker
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -71,7 +71,7 @@ class TakePhoto: UIViewController, UINavigationControllerDelegate, UIImagePicker
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Saved!", message: "The mage has been saved to your photos.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }
@@ -87,6 +87,7 @@ class TakePhoto: UIViewController, UINavigationControllerDelegate, UIImagePicker
             let stringHash = digest.map{String(format: "%02hhx", $0)}.joined()
             let digest_2 = SHA512.hash(data: Data((stringHash + userName!).utf8))
             let stringHash_2 = digest_2.map{String(format: "%02hhx", $0)}.joined()
+            print(stringHash_2)
             let url = URL(string: "http://54.149.14.169:8000/registerHash")!
             guard let uploadData = try? JSONEncoder().encode(["hash" : stringHash_2]) else {
                 let alert_1 = UIAlertController(title: "Error", message: "JSON encoding failed", preferredStyle: .alert)
@@ -146,7 +147,7 @@ class TakePhoto: UIViewController, UINavigationControllerDelegate, UIImagePicker
     }
     
     func correctUpload() {
-        let alert_1 = UIAlertController(title: "Congratulations!", message: "Upload to server successful", preferredStyle: .alert)
+        let alert_1 = UIAlertController(title: "Congratulations!", message: "Upload to server successful. You can check the status of your transaction in Check Hash section of main menu.", preferredStyle: .alert)
         alert_1.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert_1, animated: true, completion: nil)
     }

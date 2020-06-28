@@ -29,9 +29,8 @@ class StartingScene: UIViewController, UINavigationControllerDelegate {
             guard let destination = segue.destination as? TakePhoto else {return}
             destination.userName = userName
         } else if segue.identifier == "toVideoView" {
-            //
-            // переход на экран с видео
-            //
+            guard let destination = segue.destination as? MakeVideo else {return}
+            destination.userName = userName
         } else {
             return
         }

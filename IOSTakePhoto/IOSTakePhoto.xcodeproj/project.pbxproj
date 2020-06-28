@@ -17,6 +17,8 @@
 		85FA864024A3B10F00EDD9D5 /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FA863F24A3B10F00EDD9D5 /* TakePhoto.swift */; };
 		85FA864224A437E200EDD9D5 /* CheckHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FA864124A437E200EDD9D5 /* CheckHash.swift */; };
 		85FA864424A43AC300EDD9D5 /* TakePhoto_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FA864324A43AC300EDD9D5 /* TakePhoto_2.swift */; };
+		85FA866C24A68F8200EDD9D5 /* MakeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FA866B24A68F8200EDD9D5 /* MakeVideo.swift */; };
+		85FA866E24A6DAEC00EDD9D5 /* MakeVideo_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FA866D24A6DAEC00EDD9D5 /* MakeVideo_2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		85FA863F24A3B10F00EDD9D5 /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
 		85FA864124A437E200EDD9D5 /* CheckHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckHash.swift; sourceTree = "<group>"; };
 		85FA864324A43AC300EDD9D5 /* TakePhoto_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto_2.swift; sourceTree = "<group>"; };
+		85FA866B24A68F8200EDD9D5 /* MakeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeVideo.swift; sourceTree = "<group>"; };
+		85FA866D24A6DAEC00EDD9D5 /* MakeVideo_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeVideo_2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +73,10 @@
 				85FA863B24A394B100EDD9D5 /* ChooseOperation.swift */,
 				8502EBA42444CF1100F41F2F /* StartingScene.swift */,
 				85FA863F24A3B10F00EDD9D5 /* TakePhoto.swift */,
+				85FA866B24A68F8200EDD9D5 /* MakeVideo.swift */,
 				85FA864124A437E200EDD9D5 /* CheckHash.swift */,
 				85FA864324A43AC300EDD9D5 /* TakePhoto_2.swift */,
+				85FA866D24A6DAEC00EDD9D5 /* MakeVideo_2.swift */,
 				8502EB9424437B4200F41F2F /* Main.storyboard */,
 				8502EB9724437B4600F41F2F /* Assets.xcassets */,
 				8502EB9924437B4600F41F2F /* LaunchScreen.storyboard */,
@@ -157,6 +163,8 @@
 				85FA864424A43AC300EDD9D5 /* TakePhoto_2.swift in Sources */,
 				85FA864024A3B10F00EDD9D5 /* TakePhoto.swift in Sources */,
 				8502EB9124437B4100F41F2F /* SceneDelegate.swift in Sources */,
+				85FA866C24A68F8200EDD9D5 /* MakeVideo.swift in Sources */,
+				85FA866E24A6DAEC00EDD9D5 /* MakeVideo_2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
